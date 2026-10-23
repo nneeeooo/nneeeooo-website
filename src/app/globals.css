@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #000000;
+  --color-fg: #ffffff;
+  --color-fg2: #3f3f3f;
+  --color-fg3: #181818;
+  --font-coolvetica: var(--font-coolvetica), Arial, sans-serif;
+  --font-helvetica: var(--font-helvetica), Arial, sans-serif;
+  --font-moderniz: var(--font-moderniz), Arial, sans-serif;
+  --font-stretch: var(--font-stretch), Arial, sans-serif;
+}
+
+body {
+  background-color: #000000;
+  color: #ffffff;
+  font-family: var(--font-coolvetica);
+  overflow: hidden;
+  height: 110vh;
+  background-image: url('/grid.jpg');
+  background-size: cover;
+}
+
+@media (min-width: 768px) {
+  body {
+    height: 100vh;
+  }
+}
+
+.grid-bg {
+  background-image: url('/grid.jpg');
+  background-size: cover;
+}
+
+*::selection {
+  background-color: #3f3f3f;
+}
+
+* {
+  user-select: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+img {
+  pointer-events: none;
+}
