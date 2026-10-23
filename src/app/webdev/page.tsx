@@ -4,7 +4,18 @@ import CardWeb from '@/components/CardWeb';
 import { getWebdev } from '@/sanity/queries';
 
 export const metadata: Metadata = {
-  title: 'Andrii Lytvyn - Webdev',
+  title: 'Web Development Projects',
+  description:
+    'Selected web applications, interfaces, and frontend development projects built by Andrii Lytvyn.',
+  alternates: {
+    canonical: '/webdev',
+  },
+  openGraph: {
+    title: 'Web Development Projects · Andrii Lytvyn',
+    description:
+      'Selected web applications, interfaces, and frontend development projects built by Andrii Lytvyn.',
+    url: '/webdev',
+  },
 };
 
 export default async function WebdevPage() {
@@ -12,8 +23,9 @@ export default async function WebdevPage() {
   const webdevItems = data?.webdev || [];
 
   return (
-    <div className="flex flex-col px-2 py-3 md:p-6 md:h-screen h-[110vh] overflow-y-auto">
+    <main className="flex flex-col px-2 py-3 md:p-6 md:h-screen h-[110vh] overflow-y-auto">
       <Navbar />
+      <h1 className="sr-only">Web Development Projects · Andrii Lytvyn</h1>
       <div className="grid gap-4 lg:grid-cols-2 pb-12">
         {webdevItems.map((item) => (
           <CardWeb
@@ -27,6 +39,6 @@ export default async function WebdevPage() {
           />
         ))}
       </div>
-    </div>
+    </main>
   );
 }

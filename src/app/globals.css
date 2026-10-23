@@ -17,7 +17,7 @@ body {
   font-family: var(--font-coolvetica);
   overflow: hidden;
   height: 110vh;
-  background-image: url('/grid.jpg');
+  background-image: url('/grid.webp');
   background-size: cover;
 }
 
@@ -28,7 +28,7 @@ body {
 }
 
 .grid-bg {
-  background-image: url('/grid.jpg');
+  background-image: url('/grid.webp');
   background-size: cover;
 }
 
