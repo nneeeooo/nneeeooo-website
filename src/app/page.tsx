@@ -1,10 +1,56 @@
 import Image from 'next/image';
 import Button from '@/components/Button';
-import { RiTelegram2Fill } from 'react-icons/ri';
+import {
+  RiTelegram2Fill,
+  RiLinkedinBoxFill,
+  RiGithubFill,
+  RiTwitterXFill,
+  RiInstagramFill,
+  RiYoutubeFill,
+  RiBehanceFill,
+  RiDribbbleFill,
+} from 'react-icons/ri';
 import { BiLogoGmail } from 'react-icons/bi';
 import { PiReadCvLogoFill } from 'react-icons/pi';
+import { GiMagicLamp } from 'react-icons/gi';
+import { MdOutlineLink } from 'react-icons/md';
 import { getProfile } from '@/sanity/queries';
 import { urlFor } from '@/sanity/image';
+
+function getCustomLinkIcon(title: string, url: string) {
+  const t = title.toLowerCase();
+  const u = url.toLowerCase();
+  if (t.includes('linkedin') || u.includes('linkedin.com')) {
+    return <RiLinkedinBoxFill className="w-4 h-4" />;
+  }
+  if (t.includes('djinni') || u.includes('djinni.co')) {
+    return <GiMagicLamp className="w-4 h-4" />;
+  }
+  if (t.includes('github') || u.includes('github.com')) {
+    return <RiGithubFill className="w-4 h-4" />;
+  }
+  if (t.includes('behance') || u.includes('behance.net')) {
+    return <RiBehanceFill className="w-4 h-4" />;
+  }
+  if (t.includes('dribbble') || u.includes('dribbble.com')) {
+    return <RiDribbbleFill className="w-4 h-4" />;
+  }
+  if (t.includes('instagram') || u.includes('instagram.com')) {
+    return <RiInstagramFill className="w-4 h-4" />;
+  }
+  if (
+    t.includes('twitter') ||
+    t === 'x' ||
+    u.includes('twitter.com') ||
+    u.includes('x.com')
+  ) {
+    return <RiTwitterXFill className="w-4 h-4" />;
+  }
+  if (t.includes('youtube') || u.includes('youtube.com')) {
+    return <RiYoutubeFill className="w-4 h-4" />;
+  }
+  return <MdOutlineLink className="w-4 h-4" />;
+}
 
 const defaultBio = `Marketing Motion Designer specializing in performance video ads and high-converting static creatives for mobile subscription apps, primarily on Meta.
 
@@ -86,6 +132,7 @@ export default async function Home() {
             <Button
               key={link.title}
               text={link.title}
+              icon={getCustomLinkIcon(link.title, link.url)}
               href={link.url}
               target="_blank"
             />
