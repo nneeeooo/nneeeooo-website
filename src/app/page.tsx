@@ -54,7 +54,7 @@ function getCustomLinkIcon(title: string, url: string) {
 
 const defaultBio = `Marketing Motion Designer specializing in performance video ads and high-converting static creatives for mobile subscription apps, primarily on Meta.
 
-Combines high-velocity generative AI pipelines (Seedance 2.5, Higgsfield, Nano Banana, ElevenLabs) with precise After Effects post-production, kinetic typography, and sound design.
+Combines high-velocity generative AI pipelines (Seedance 2.5, Higgsfield, Nano Banana, ElevenLabs) with precise After Effects post-production, multi-layer compositing, visual pacing, and sound design.
 
 BSc in Computer Science & Artificial Intelligence (Lviv Polytechnic).
 Based in Lviv, Ukraine · Open to remote collaboration.`;
