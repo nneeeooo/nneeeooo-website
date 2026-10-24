@@ -1,7 +1,22 @@
 import type { Metadata } from 'next';
 import Navbar from '@/components/Navbar';
 import CardWeb from '@/components/CardWeb';
-import { getWebdev } from '@/sanity/queries';
+import { sanity } from '@/sanity/client';
+
+type WebdevItem = {
+  thumbnail169: any;
+  thumbnail43: any;
+  title: string;
+  description: string;
+  stack: string;
+  link?: string;
+};
+
+type WebdevDocument = {
+  webdev?: WebdevItem[];
+};
+
+const query = `*[_type == "webdev"][0] { webdev }`;
 
 export const metadata: Metadata = {
   title: 'Web Development Projects',
@@ -19,7 +34,7 @@ export const metadata: Metadata = {
 };
 
 export default async function WebdevPage() {
-  const data = await getWebdev();
+  const data = await sanity.fetch<WebdevDocument | null>(query);
   const webdevItems = data?.webdev || [];
 
   return (

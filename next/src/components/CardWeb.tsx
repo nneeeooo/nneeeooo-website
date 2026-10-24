@@ -2,22 +2,21 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { urlFor } from '@/sanity/image';
-import type { SanityImage } from '@/sanity/types';
 
 interface CardWebProps {
   title: string;
   description: string;
   stack: string;
-  link: string;
-  thumbDesktop: SanityImage;
-  thumbMobile: SanityImage;
+  link?: string;
+  thumbDesktop: any;
+  thumbMobile: any;
 }
 
 export default function CardWeb({
   title,
   description,
   stack,
-  link,
+  link = '#',
   thumbDesktop,
   thumbMobile,
 }: CardWebProps) {

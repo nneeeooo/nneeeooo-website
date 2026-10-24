@@ -8,5 +8,6 @@ export default defineCliConfig({
   studioHost: 'nneeeooo',
   deployment: {
     appId: 'c3f02529a1f1cc71424c8910',
+    autoUpdates: true,
   },
 });

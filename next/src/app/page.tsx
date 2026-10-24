@@ -14,8 +14,33 @@ import { BiLogoGmail } from 'react-icons/bi';
 import { PiReadCvLogoFill } from 'react-icons/pi';
 import { GiMagicLamp } from 'react-icons/gi';
 import { MdOutlineLink } from 'react-icons/md';
-import { getProfile } from '@/sanity/queries';
+import { sanity } from '@/sanity/client';
 import { urlFor } from '@/sanity/image';
+
+type ProfileData = {
+  name?: string;
+  avatar?: any;
+  bio?: string;
+  telegram?: string;
+  email?: string;
+  resumeFileUrl?: string;
+  resumeUrl?: string;
+  customLinks?: {
+    title: string;
+    url: string;
+  }[];
+};
+
+const query = `*[_type == "profile"][0] {
+  name,
+  avatar,
+  bio,
+  telegram,
+  email,
+  "resumeFileUrl": resumeFile.asset->url,
+  resumeUrl,
+  customLinks
+}`;
 
 function getCustomLinkIcon(title: string, url: string) {
   const t = title.toLowerCase();
@@ -60,7 +85,7 @@ BSc in Computer Science & Artificial Intelligence (Lviv Polytechnic).
 Based in Lviv, Ukraine · Open to remote collaboration.`;
 
 export default async function Home() {
-  const profile = await getProfile();
+  const profile = await sanity.fetch<ProfileData | null>(query);
 
   const name = profile?.name || 'Andrii Lytvyn';
   const bio = profile?.bio || defaultBio;

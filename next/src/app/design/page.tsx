@@ -2,8 +2,20 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import Navbar from '@/components/Navbar';
-import { getDesign } from '@/sanity/queries';
+import { sanity } from '@/sanity/client';
 import { urlFor } from '@/sanity/image';
+
+type DesignItem = {
+  preview: any;
+  link?: string;
+};
+
+type DesignDocument = {
+  posts?: DesignItem[];
+  date?: string;
+};
+
+const query = `*[_type == "design"] { posts[] { preview, link }, date } | order(date desc)`;
 
 export const metadata: Metadata = {
   title: 'Design Portfolio',
@@ -21,7 +33,7 @@ export const metadata: Metadata = {
 };
 
 export default async function DesignPage() {
-  const designData = await getDesign();
+  const designData = await sanity.fetch<DesignDocument[]>(query);
   const posts = designData?.flatMap((item) => item.posts || []) || [];
 
   return (
