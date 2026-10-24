@@ -15,16 +15,33 @@ export default defineConfig({
     structureTool({
       structure: (S) =>
         S.list()
-          .title('Main')
+          .title('Content')
           .items([
             S.listItem()
+              .title('Profile / Home')
+              .child(
+                S.document()
+                  .title('Profile / Home')
+                  .schemaType('profile')
+                  .documentId('profile')
+              ),
+            S.listItem()
               .title('Webdev')
-              .child(S.document().title('Webdev').schemaType('webdev').documentId('webdev')),
+              .child(
+                S.document()
+                  .title('Webdev')
+                  .schemaType('webdev')
+                  .documentId('webdev')
+              ),
             ...S.documentTypeListItems().filter(
               (listItem) =>
-                !['webdev', 'webdevItem', 'designItem', 'media.tag'].includes(
-                  `${listItem.getId()}`
-                )
+                ![
+                  'profile',
+                  'webdev',
+                  'webdevItem',
+                  'designItem',
+                  'media.tag',
+                ].includes(`${listItem.getId()}`)
             ),
           ]),
     }),

@@ -8,6 +8,22 @@ export type SanityImage = {
   _type?: 'image';
 };
 
+export type CustomLink = {
+  title: string;
+  url: string;
+};
+
+export type ProfileDocument = {
+  name?: string;
+  avatar?: SanityImage;
+  bio?: string;
+  telegram?: string;
+  email?: string;
+  resumeFileUrl?: string;
+  resumeUrl?: string;
+  customLinks?: CustomLink[];
+};
+
 export type WebdevItem = {
   thumbnail169: SanityImage;
   thumbnail43: SanityImage;
