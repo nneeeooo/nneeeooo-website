@@ -6,12 +6,12 @@ import { PiReadCvLogoFill } from 'react-icons/pi';
 import { getProfile } from '@/sanity/queries';
 import { urlFor } from '@/sanity/image';
 
-const defaultBio = `I’m a motion designer producing marketing videos and static creatives, turning creative concepts into polished advertising content.
+const defaultBio = `Marketing Motion Designer specializing in performance video ads and high-converting static creatives for mobile subscription apps, primarily on Meta.
 
-2+ years of design experience
-(graphic design, desktop publishing, marketing)
+Combines high-velocity generative AI pipelines (Seedance 2.5, Higgsfield, Nano Banana, ElevenLabs) with precise After Effects post-production, kinetic typography, and sound design.
 
-Based in Lviv, Ukraine · Open to remote collaboration`;
+BSc in Computer Science & Artificial Intelligence (Lviv Polytechnic).
+Based in Lviv, Ukraine · Open to remote collaboration.`;
 
 export default async function Home() {
   const profile = await getProfile();
@@ -31,7 +31,7 @@ export default async function Home() {
   const resumeHref =
     profile?.resumeFileUrl ||
     profile?.resumeUrl ||
-    '/Resume_Andrii_Lytvyn_Aug_2026.pdf';
+    '/Resume_Andrii_Lytvyn_Oct_2026.pdf';
 
   return (
     <main className="flex flex-col py-6 justify-center pl-6 md:pt-0 md:pl-24 text-[1rem] leading-[1.25rem] min-h-screen">

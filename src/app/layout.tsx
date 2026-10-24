@@ -31,20 +31,24 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://andriilytvyn.pp.ua'
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'Andrii Lytvyn · Motion Designer & Creative',
+    default: 'Andrii Lytvyn · Marketing Motion Designer · AI Video Ads',
     template: '%s · Andrii Lytvyn',
   },
   description:
-    'Motion designer producing marketing videos and static creatives, turning concepts into polished advertising content. Based in Lviv, Ukraine.',
+    'Marketing motion designer specializing in performance video ads and high-converting static creatives for mobile subscription apps. Based in Lviv, Ukraine.',
   keywords: [
     'Andrii Lytvyn',
     'nneeeooo',
-    'Motion Designer',
+    'Marketing Motion Designer',
+    'AI Video Ads',
+    'Motion Design',
+    'Performance Creatives',
+    'After Effects',
+    'Seedance',
+    'Higgsfield',
+    'Generative AI',
+    'Mobile Ads',
     'Graphic Designer',
-    'Marketing Videos',
-    'Static Creatives',
-    'Desktop Publishing',
-    'Web Development',
     'Portfolio',
     'Lviv',
     'Ukraine',
@@ -63,9 +67,9 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: siteUrl,
     siteName: 'Andrii Lytvyn Portfolio',
-    title: 'Andrii Lytvyn · Motion Designer & Creative',
+    title: 'Andrii Lytvyn · Marketing Motion Designer · AI Video Ads',
     description:
-      'Motion designer producing marketing videos and static creatives, turning concepts into polished advertising content.',
+      'Marketing motion designer specializing in performance video ads and high-converting static creatives for mobile subscription apps.',
     images: [
       {
         url: '/picture.png',
@@ -77,9 +81,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Andrii Lytvyn · Motion Designer & Creative',
+    title: 'Andrii Lytvyn · Marketing Motion Designer · AI Video Ads',
     description:
-      'Motion designer producing marketing videos and static creatives, turning concepts into polished advertising content.',
+      'Marketing motion designer specializing in performance video ads and high-converting static creatives for mobile subscription apps.',
     images: ['/picture.png'],
     creator: '@nneeeooo',
   },
@@ -102,9 +106,9 @@ const jsonLd = {
       '@id': `${siteUrl}/#person`,
       name: 'Andrii Lytvyn',
       alternateName: 'nneeeooo',
-      jobTitle: 'Motion Designer & Creative',
+      jobTitle: 'Marketing Motion Designer · AI Video Ads',
       description:
-        'Motion designer producing marketing videos and static creatives, based in Lviv, Ukraine.',
+        'Marketing motion designer specializing in performance video ads and high-converting static creatives for mobile subscription apps.',
       url: siteUrl,
       image: `${siteUrl}/picture.png`,
       address: {
@@ -115,13 +119,18 @@ const jsonLd = {
       sameAs: [
         'https://t.me/nneeeooo',
         'https://github.com/nneeeooo',
-        'https://www.linkedin.com/in/andrii-lytvyn-profile',
+        'https://www.linkedin.com/in/andrii-lytvyn-profile/',
+        'https://djinni.co/q/b51ed0dd48/',
         'mailto:lytvyn.andrii.contact@gmail.com',
       ],
       knowsAbout: [
         'Motion Design',
-        'Marketing Videos',
-        'Static Creatives',
+        'AI Video Ads',
+        'Performance Creatives',
+        'After Effects',
+        'Seedance',
+        'Higgsfield',
+        'Generative AI',
         'Graphic Design',
         'Desktop Publishing',
         'Web Development',
